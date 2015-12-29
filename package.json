@@ -1,0 +1,27 @@
+{
+  "name": "thermostat",
+  "version": "1.0.0",
+  "description": "Thermostat application for Raspberry PI using the Adafruit MAX31855 thermocouple amplifier.",
+  "main": "thermostat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maugdog/thermostat.git"
+  },
+  "keywords": [
+    "thermostat",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Max Montgelas",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/maugdog/thermostat/issues"
+  },
+  "homepage": "https://github.com/maugdog/thermostat#readme",
+  "dependencies": {
+    "max31855": "file:../max31855"
+  }
+}
