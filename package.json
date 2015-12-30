@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/maugdog/thermostat#readme",
   "dependencies": {
+    "cli-color": "^1.1.0",
     "max31855": "file:../max31855"
   }
 }
