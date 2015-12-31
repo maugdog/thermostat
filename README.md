@@ -9,7 +9,22 @@ with hardware SPI. See [here](https://www.raspberrypi.org/documentation/hardware
 
 ## Usage
 
-    $ sudo node thermostat.js
+    var Thermostat = require('thermostat');
+    var thermostat = new Thermostat(options);
+
+    // Create a Thermostat instance
+    var thermostat = new Thermostat(thermostatOptions());
+    // Configure the powerswitch to be controlled, and the sensor to provide temperature input data
+    thermostat.powerswitch = yourPowerSwitchObject;
+    thermostat.thermoSensor = yourThermoSensorObject;
+    // Optional handler can be called after the thermostat takes a temp reading
+    thermostat.afterTempRead = function(sender) { ... };
+    // Go!
+    thermostat.run();
+
+## Options
+
+TODO
 
 ## Release History
 
