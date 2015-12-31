@@ -20,9 +20,5 @@
   "bugs": {
     "url": "https://github.com/maugdog/thermostat/issues"
   },
-  "homepage": "https://github.com/maugdog/thermostat#readme",
-  "dependencies": {
-    "cli-color": "^1.1.0",
-    "max31855": "file:../max31855"
-  }
+  "homepage": "https://github.com/maugdog/thermostat#readme"
 }
