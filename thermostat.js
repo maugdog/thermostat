@@ -14,8 +14,8 @@ function Thermostat(options) {
   */
   this.thermoSensor = null;
 
-  /** The powerswitch object must define an isOn property, as well as setOn() and setOff() methods. */
-  this.powerswitch = null;
+  /** The powerSwitch object must define an isOn property, as well as setOn() and setOff() methods. */
+  this.powerSwitch = null;
 
   /** If defined, this handler will be called on each read of the thermoSensor.
     It is passed the calling ThermoStat instance as its only param. */
@@ -43,12 +43,12 @@ Thermostat.prototype.updateOptions = function(options) {
 // Set the state to ON
 Thermostat.prototype._setState = function(shouldBeOn) {
   var currentTime = new Date().getTime();
-  if(!this.powerswitch.isOn && shouldBeOn) {
+  if(!this.powerSwitch.isOn && shouldBeOn) {
     this._lastStateChange = currentTime;
-    this.powerswitch.setOn();
-  } else if(this.powerswitch.isOn && !shouldBeOn) {
+    this.powerSwitch.setOn();
+  } else if(this.powerSwitch.isOn && !shouldBeOn) {
     this._lastStateChange = currentTime;
-    this.powerswitch.setOff();
+    this.powerSwitch.setOff();
   }
 };
 
@@ -96,8 +96,8 @@ Thermostat.prototype.timeRemaining = function() {
 // Start checking the thermoSensor reading on regular intervals
 Thermostat.prototype.run = function() {
   if(this.thermoSensor) {
-    if(!this.powerswitch) {
-      console.error('Thermostat warning: No switch object provided. Will run as a thermometer until you set the powerswitch property.');
+    if(!this.powerSwitch) {
+      console.error('Thermostat warning: No switch object provided. Will run as a thermometer until you set the powerSwitch property.');
     }
 
     // Good to go, start running this thing!
@@ -114,7 +114,7 @@ Thermostat.prototype.run = function() {
         self.thermoSensor.readTemp(function(temp) {
           self.currentTemp = temp;
           self._isReading = false;
-          if(self.powerswitch) { self._setStateForTemp(temp); }
+          if(self.powerSwitch) { self._setStateForTemp(temp); }
 
           // Call the afterTempRead handler
           if(self.afterTempRead) {self.afterTempRead(self);}
