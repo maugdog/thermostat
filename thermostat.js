@@ -9,7 +9,7 @@ function Thermostat(options) {
 
   this.currentTemp = NaN;
 
-  /** The thermoSensor object must define a readTemp(callback) method that passes the current
+  /** The thermoSensor object must define a readTempC(callback) method that passes the current
     temperature value as a float (in degrees celsius) to the callback.
   */
   this.thermoSensor = null;
@@ -111,7 +111,7 @@ Thermostat.prototype.run = function() {
 
       if(!self._isReading) {
         self._isReading = true;
-        self.thermoSensor.readTemp(function(temp) {
+        self.thermoSensor.readTempC(function(temp) {
           self.currentTemp = temp;
           self._isReading = false;
           if(self.powerSwitch) { self._setStateForTemp(temp); }
